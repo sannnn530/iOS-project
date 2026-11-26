@@ -8,7 +8,7 @@ on:
 
 jobs:
   build:
-    runs-on: macos-14
+    runs-on: macos-latest
     steps:
       - uses: actions/checkout@v4
 
@@ -22,8 +22,8 @@ jobs:
         run: |
           xcodebuild -project LeviLauncher.xcodeproj \
             -scheme LeviLauncher \
-            -sdk iphoneos \
             -configuration Release \
+            -sdk iphoneos \
             -derivedDataPath build \
             CODE_SIGNING_ALLOWED=NO CODE_SIGNING_REQUIRED=NO CODE_SIGN_IDENTITY="" \
             build
